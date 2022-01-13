@@ -1,5 +1,9 @@
+.idea/
+__pycache__/
 .env
 employee_service.log
+      
+
 
        
       
