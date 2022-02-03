@@ -1,5 +1,4 @@
 import logging
-import mysql.connector as connector
 from db_connectionpython import DataBase
 
 logging.basicConfig(filename='employee_service.log', filemode='a', level=logging.DEBUG,
@@ -23,7 +22,6 @@ class DBQueries:
             query1 = "insert into payroll_service(id, name, salary, startDate) values(%d ,'%s',%f, '%s')" \
                              % (id, name, salary, startDate)
             self.cursor.execute(query1)
-            self.connection.commit()
             logging.info("Suceefully Get All the Employee services")
             logging.debug("Employee Detailes are")
             return "Inserted data Successfully"
@@ -86,8 +84,8 @@ class DBQueries:
 
 
 store_data = DBQueries()
-# store_data.payroll_service()
+store_data.payroll_service()
 store_data.insert_data(1221, 'pavan', 2000.00, "2020-02-02")
 store_data.retrive_data()
-#store_data.insert_employee_data()
+store_data.insert_employee_data()
 
